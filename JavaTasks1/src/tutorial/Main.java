@@ -5,7 +5,7 @@ import java.util.Calendar;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.control.*;
 import javafx.geometry.Insets;
 
@@ -17,7 +17,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 
 		// Create the vbox which is a expanding vertical container for our controls
-		HBox vbox = new HBox();
+		VBox vbox = new VBox();
 		vbox.setPadding(new Insets(10,10,10,10));
 		vbox.setSpacing(10);
 		
@@ -33,13 +33,7 @@ public class Main extends Application {
 		vbox.getChildren().add(new TextField(""));
 		vbox.getChildren().add(setTaskButton);
 		vbox.getChildren().add(taskLabel);
-	
-		{
-			String inScope = "Hello";
-			System.out.println("In Scope" + inScope);			
-		}
-		
-		
+
 		setTaskButton.setOnAction(e -> { 
 			taskLabel.setText("The task is updated at " + Calendar.getInstance().getTime());
 		} );
